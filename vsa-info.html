@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mellanox SysInfoSnapshot &middot; Host Information</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- styles -->
+		<link href="./assets/css/bootstrap.css" rel="stylesheet">
+		<link href="./assets/css/bootstrap-mods.css" rel="stylesheet">
+		<link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="./assets/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="./assets/ico/favicon.png">
+	</head>
+
+	<body>
+		<!-- anchor for "[back to index]" -->
+		<a name="index"></a>
+		
+		<!-- here starts the content -->
+		<div class="container">
+			<div class="masthead">
+				
+<!-- might be a better way to do this -->
+				<div class="row">
+					<div class="span3">
+						<a href="./index.html"><img src="./images/logo-long.png" alt="Mellanox Technologies"></a>
+					</div>
+					<div class="span3 pull-right text-right">
+						<h3>SysInfoSnapshot</h3>
+					</div>
+				</div>
+				
+<!-- begin navigation bar -->				
+				<div class="navbar navbar-inverse">
+					<div class="navbar-inner">
+						<div class="container">
+							<ul class="nav">
+								<li><a href="./host-info.html">Host Info</a></li>
+								<li><a href="./fabric-info.html">Fabric Info</a></li>
+								<li><a href="./switch-info.html">Switch Info</a></li>
+								<li><a href="./tuning-review.html">Tuning Review</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.navbar -->
+			</div>
+
+			<h2>Host information</h2>
+			
+<!-- stole this from TBS examples - need to determine if it needs to change-->
+			<div class="SISS-content-tabs"> 
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#all" data-toggle="tab">all</a></li>
+				</ul>
+
+<!-- here starts the tab content -->
+				<div id="myTabContent" class="tab-content">
+
+<!-- start of hardware tab -->
+					<div class="tab-pane fade in active" id="all">
+						<!--these colums must add to 10 but 9 makes a nice layout-->
+						<div class="row" style="height: 350px;">
+							<div class="span3 offset1">							
+								<a class="btn btn-small btn-success btn-block" href="#sec1002">biosdecode</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1003">blkid -c /dev/null | sort</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">dmidecode</a>
+							</div>
+
+							<div class="span3 offset2">
+								<a class="btn btn-small btn-success btn-block" href="#sec1017">hwinfo --netcard</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">mii-tool -vv</a>
+							</div>
+						</div>
+					</div>
+
+
+
+<a name="messages"></a>
+<h2>/var/log/messages</h2>
+<pre>Jan 22 18:28:33 hpss20 kernel: imklog 5.8.10, log source = /proc/kmsg started.
+Jan 22 18:28:33 hpss20 rsyslogd: [origin software="rsyslogd" swVersion="5.8.10" x-pid="6608" x-info="http://www.rsyslog.com"] start
+Jan 22 18:28:33 hpss20 kernel: readahead-collector: starting
+Jan 22 18:28:33 hpss20 kernel: udev: starting version 147
+Jan 22 18:28:33 hpss20 kernel: ACPI Error: No handler for Region [SYSI] (ffff882033867420) [IPMI] (20090903/evregion-319)
+Jan 22 18:28:33 hpss20 kernel: ACPI Error: Region IPMI(7) has no handler (20090903/exfldio-295)
+Jan 22 18:28:33 hpss20 kernel: ACPI Error (psparse-0537): Method parse/execution failed [\_SB_.PMI0._GHL] (Node ffff8820338648d0), AE_NOT_EXIST
+Jan 22 18:28:33 hpss20 kernel: ACPI Error (psparse-0537): Method parse/execution failed [\_SB_.PMI0._PMC] (Node ffff882033864920), AE_NOT_EXIST
+Jan 22 18:28:33 hpss20 kernel: ACPI Exception: AE_NOT_EXIST, Evaluating _PMC (20090903/power_meter-759)
+</pre>
+<div class="row">
+	<div class="span2 pull-right">
+		<a class="btn btn-mini btn-inverse" href="#index">back to index</a>
+	</div>
+</div>
+
+		<div class="footer">
+			<p>&copy; Mellanox Technologies 2013</p>
+			
+			<ul class="footer-links">
+				<li><a href="#">About</a></li>
+				<li class="muted">&middot;</li>
+				<li><a href="#">Contact</a></li>
+				<li class="muted">&middot;</li>
+				<li><a href="http://support.mellanox.com/SupportWeb">Support Web</a></li>
+			</ul>
+		</div>
+    </div> <!-- /container -->
+   
+ 
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assets/js/jquery-1.9.1.js"></script>
+    <script src="./assets/js/bootstrap.js"></script>
+
+
+  </body>
+</html>

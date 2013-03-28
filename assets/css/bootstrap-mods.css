@@ -1,0 +1,143 @@
+
+
+
+/* Custom container*/
+body {
+	padding-top: 20px;
+	padding-bottom: 60px;
+}
+
+
+.container {
+	margin: 0 auto;
+	max-width: 940px;
+}
+.container > hr {
+	margin: 30px 0; 
+}
+
+/* Social proof buttons from GitHub & Twitter */
+.bs-docs-social {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Quick links on Home */
+.bs-docs-social-buttons {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.bs-docs-social-buttons li {
+  display: inline-block;
+  padding: 5px 8px;
+  line-height: 1;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* Main marketing message and sign up button 
+.jumbotron {
+	margin: 80px 0;
+	text-align: center;
+}
+.jumbotron h1 {
+	font-size: 100px;
+	line-height: 1;
+}
+.jumbotron .lead {
+	font-size: 24px;
+	line-height: 1.25;
+}
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}*/
+
+/* Supporting marketing content 
+.marketing {
+	margin: 60px 0;
+}
+.marketing p + h4 {
+	margin-top: 28px;
+}*/
+
+
+/* Customize the navbar links to be fill the entire space of the .navbar 
+.navbar .navbar-inner {
+	padding: 0;
+}
+.navbar .nav {
+	margin: 0;
+	display: table;
+	width: 100%;
+}
+
+.navbar .nav li {
+	display: table-cell;
+	width: 1%;
+	float: none;
+}
+.navbar .nav li a {
+	font-weight: bold;
+	text-align: center;
+	border-left: 1px solid rgba(255,255,255,.75);
+	border-right: 1px solid rgba(0,0,0,.1);
+}
+.navbar .nav li:first-child a {
+	border-left: 0;
+	border-radius: 3px 0 0 3px;
+}
+.navbar .nav li:last-child a {
+	border-right: 0;
+	border-radius: 0 3px 3px 0;
+}
+*/
+
+.navbar .navbar-inner{
+background: rgb(37,83,144); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(37,83,144,1) 0%, rgba(32,124,202,1) 50%, rgba(37,83,144,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(37,83,144,1)), color-stop(50%,rgba(32,124,202,1)), color-stop(100%,rgba(37,83,144,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(37,83,144,1) 0%,rgba(32,124,202,1) 50%,rgba(37,83,144,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(37,83,144,1) 0%,rgba(32,124,202,1) 50%,rgba(37,83,144,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(37,83,144,1) 0%,rgba(32,124,202,1) 50%,rgba(37,83,144,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(37,83,144,1) 0%,rgba(32,124,202,1) 50%,rgba(37,83,144,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#255390', endColorstr='#255390',GradientType=1 ); /* IE6-9 */
+
+
+}
+
+/* Footer -------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+
+
+
+
+
+
+
