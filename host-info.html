@@ -53,43 +53,47 @@
 								<li><a href="./switch-info.html">Switch Info</a></li>
 								<li><a href="./tuning-review.html">Tuning Review</a></li>
 							</ul>
+							<ul class="nav pull-right">
+								<li><a href="./errors.html">Error Summary</a></li>							
+							</ul>
 						</div>
 					</div>
 				</div><!-- /.navbar -->
-			</div>
+			</div><!-- /.masthead -->
 
 			<h2>Host information</h2>
-			
-<!-- stole this from TBS examples - need to determine if it needs to change-->
+
+    <div class="progress pull-right" style="width:100px; height: 5px;">
+    <div class="bar bar-success" style="width: 35%;"></div>
+    <div class="bar bar-warning" style="width: 20%;"></div>
+    <div class="bar bar-danger" style="width: 10%;"></div>
+    </div>
+			    
+<!-- SISS-content-tabs not actually implemented -->
 			<div class="SISS-content-tabs"> 
 				<ul id="myTab" class="nav nav-tabs">
 					<li class="active"><a href="#hardware" data-toggle="tab">Hardware</a></li>
 					<li class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="./host-info.html">System Info <b class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="#systemInfo" data-toggle="tab">General</a></li>
-										<li><a href="#etc" data-toggle="tab">/etc</a></li>
-										<li><a href="#procl" data-toggle="tab">/proc</a></li>
-										<li><a href="#sys" data-toggle="tab">/sys</a></li>
-										<li class="divider"></li>
-										<li><a href="allDeets">All Details</a></li>
-									</ul>
-								</li>
-					
+						<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="./host-info.html">System Info <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#systemInfo" data-toggle="tab">General</a></li>
+							<li><a href="#etc" data-toggle="tab">/etc</a></li>
+							<li><a href="#procl" data-toggle="tab">/proc</a></li>
+							<li><a href="#sys" data-toggle="tab">/sys</a></li>
+							<li class="divider"></li>
+							<li><a href="allDeets">All Details</a></li>
+						</ul>
+					</li>
 					<li><a href="#networkInfo" data-toggle="tab">Network</a></li>
-			
-					
 					<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Product Specific <b class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="./ufm-info.html">UFM</a></li>
-										<li><a href="./vsa-info.html">VSA</a></li>
-										<li><a href="./vma-info.html">VMA</a></li>
-										<li><a href="./fca-info.html">FCA</a></li>
-									</ul>
-								</li>
-					
-					
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Product Specific <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="./ufm-info.html">UFM</a></li>
+							<li><a href="./vsa-info.html">VSA</a></li>
+							<li><a href="./vma-info.html">VMA</a></li>
+							<li><a href="./fca-info.html">FCA</a></li>
+						</ul>
+					</li>
 				</ul>
 
 <!-- here starts the tab content -->
@@ -97,9 +101,8 @@
 
 <!-- start of hardware tab -->
 					<div class="tab-pane fade in active" id="hardware">
-						<!--these colums must add to 10 but 9 makes a nice layout-->
-						<div class="row" style="height: 350px;">
-							<div class="span3 offset1">							
+						<div class="row-fluid" style="height: 350px;">
+							<div class="span3 offset2">							
 								<a class="btn btn-small btn-success btn-block" href="#sec1002">biosdecode</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1003">blkid -c /dev/null | sort</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">dmidecode</a>
@@ -115,8 +118,8 @@
 <!-- start of system info tab -->
 					<div class="tab-pane fade" id="systemInfo">
 						<!--these colums must add to 10 but 9 makes a nice layout-->
-						<div class="row" style="height: 350px;">
-							<div class="span3 offset1">							
+						<div class="row-fluid" style="height: 350px;">
+							<div class="span3 offset2">							
 								<a class="btn btn-small btn-success btn-block" href="#sec1002">chkconfig --list | sort</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1003">date</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1003">uptime</a>
@@ -154,42 +157,12 @@
 							</div>
 						</div>
 					</div>
-					
-<!-- start of netork info tab -->					
-					<div class="tab-pane fade" id="networkInfo">
-						<!--these colums must add to 10 but 9 makes a nice layout-->
-						<div class="row" style="height: 350px;">
-							<div class="span3 offset1">			
-								<a class="btn btn-small btn-success btn-block" href="#sec1001">arp -an</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1022">ifconfig -a</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1023">ip a s</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1024">ip m s</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1025">ip n s</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1026">iptables -t filter -nvL</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1027">iptables -t mangle -nvL</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1028">iptables -t nat -nvL</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1029">iptables-save -t filter</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1030">iptables-save -t mangle</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1031">iptables-save -t nat</a>
-							</div>
-					
-							<div class="span3 offset2">
-								<a class="btn btn-small btn-success btn-block" href="#sec1039">netstat -anp</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1040">netstat -i</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1041">netstat -nlp</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1042">netstat -nr</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1048">route -n</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1050">sdpnetstat -anp</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1050">eth-tool-all-interfaces</a>
-							</div>
-						</div>
-					</div>
 
 <!-- start of /etc tab -->				
 					<div class="tab-pane fade" id="etc">
 						<!--these colums must add to 10 but 9 makes a nice layout-->	
-						<div class="row">
-							<div class="span3 offset1">
+						<div class="row-fluid">
+							<div class="span3 offset2">
 								<a class="btn btn-small btn-success btn-block" href="#sec3004">/etc/issue</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1005">/etc/SuSE-release</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1006">/etc/redhat-release</a>
@@ -231,8 +204,8 @@
 <!-- start of /proc tab -->
 					<div class="tab-pane fade" id="proc">
 						<!--these colums must add to 10 but 9 makes a nice layout-->
-						<div class="row">
-							<div class="span3 offset1">
+						<div class="row-fluid">
+							<div class="span3 offset2">
 								<a class="btn btn-small btn-success btn-block" href="#sec3045">/proc/acpi/processor/CPU*/*</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec3045">/proc/misc</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec3046">/proc/modules</a>
@@ -278,8 +251,8 @@
 <!-- start of /sys tab -->					
 					<div class="tab-pane fade" id="sys">
 						<!--these colums must add to 10 but 9 makes a nice layout-->
-						<div class="row">
-							<div class="span3 offset1">
+						<div class="row-fluid">
+							<div class="span3 offset2">
 								<a class="btn btn-small btn-success btn-block" href="#sec3060">/sys/class/infiniband/cxgb3_0/board_id</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec3061">/sys/class/infiniband/cxgb3_0/fw_ver</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec3062">/sys/class/infiniband/cxgb3_0/hca_type</a>
@@ -312,43 +285,40 @@
 								<a class="btn btn-small btn-success btn-block" href="#sec3086">/sys/class/infiniband/mlx4_1/uevent</a>
 							</div>
 						</div>						
-					</div>              
-<!--
-              <div class="tab-pane fade" id="tuning">
-                <table class="table">
-					<tr class="success">
-						<td width="25%"><a href="#sec1002">net.ipv4.tcp_timestamps=0</a>
-						</td>
-						<td width="25%"><a href="#sec1002">true</a>
-						</td>						
-					</tr>
-					<tr class="warning">
-						<td width="25%"><a href="#sec1003">net.ipv4.tcp_sack=0</a>
-						</td>
-						<td width="25%"><a href="#sec1002">false</a>
-						</td>						
-					</tr>
-					<tr class="error">
-						<td width="25%"><a href="#sec1011">net.core.netdev_max_backlog=250000</a>
-						</td>
-						<td width="25%"><a href="#sec1002">could not find prameter</a>
-						</td>						
-					</tr>
-					<tr class="info">
-						<td width="25%"><a href="#sec1017">hwinfo --netcard</a>
-						</td>
-						<td width="25%"><a href="#sec1002">biosdecode</a>
-						</td>						
-					</tr>
-					<tr class="success">
-						<td width="25%"><a href="#sec1056">sysctl -a</a>
-						</td>
-						<td width="25%"><a href="#sec1002">biosdecode</a>
-						</td>						
-					</tr>
-				</table>
-              </div>               
--->
+					</div>
+										
+<!-- start of netork info tab -->					
+					<div class="tab-pane fade" id="networkInfo">
+						<!--these colums must add to 10 but 9 makes a nice layout-->
+						<div class="row-fluid" style="height: 350px;">
+							<div class="span3 offset2">			
+								<a class="btn btn-small btn-success btn-block" href="#sec1001">arp -an</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1022">ifconfig -a</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1023">ip a s</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1024">ip m s</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1025">ip n s</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1026">iptables -t filter -nvL</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1027">iptables -t mangle -nvL</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1028">iptables -t nat -nvL</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1029">iptables-save -t filter</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1030">iptables-save -t mangle</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1031">iptables-save -t nat</a>
+							</div>
+					
+							<div class="span3 offset2">
+								<a class="btn btn-small btn-success btn-block" href="#sec1039">netstat -anp</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1040">netstat -i</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1041">netstat -nlp</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1042">netstat -nr</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1048">route -n</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1050">sdpnetstat -anp</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1050">eth-tool-all-interfaces</a>
+							</div>
+						</div>
+					</div>
+
+              
+
             </div>
           </div>
 
@@ -528,9 +498,13 @@ CONFIG_AVERAGE=y
 </div>
 
 <a name="suse-release"></a>
-<h2>cat /etc/SuSE-release</h2>
-<pre>cat: /etc/SuSE-release: No such file or directory
-</pre>
+<h2>SuSE-release</h2>
+<div class="alert alert-error">
+	<h4>Error!</h4>
+	<p>cat: /etc/SuSE-release: No such file or directory </p>
+</div>
+
+
 <div class="row">
 	<div class="span2 pull-right">
 		<a class="btn btn-mini btn-inverse" href="#index">back to index</a>
@@ -7933,14 +7907,45 @@ Jan 22 18:28:33 hpss20 kernel: ACPI Exception: AE_NOT_EXIST, Evaluating _PMC (20
 
 		<div class="footer">
 			<p>&copy; Mellanox Technologies 2013</p>
-			
+
 			<ul class="footer-links">
-				<li><a href="#">About</a></li>
+				<li><a href="#myModal" data-toggle="modal">About</a></li>
 				<li class="muted">&middot;</li>
 				<li><a href="#">Contact</a></li>
 				<li class="muted">&middot;</li>
 				<li><a href="http://support.mellanox.com/SupportWeb">Support Web</a></li>
 			</ul>
+
+			<div class="bs-docs-social">
+				<div class="container">
+					<ul class="bs-docs-social-buttons">
+						<li>
+							<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mellanoxsupport&repo=sysinfo-snapshot&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+						</li>
+						<li>
+							<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mellanoxsupport&repo=sysinfo-snapshot&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		<!-- Modal -->
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<h3 id="myModalLabel">About SysInfoSnapshot</h3>
+			</div>
+			<div class="modal-body">
+				<p>Version: 2.01.1</p>
+				<p>Credits:</p>
+				<p>Python Coding: Luis De Siqueira</p>
+				<p>HTML Interface: Ryan Heath</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
 		</div>
     </div> <!-- /container -->
    

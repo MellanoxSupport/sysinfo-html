@@ -56,7 +56,7 @@
 						</div>
 					</div>
 				</div><!-- /.navbar -->
-			</div>
+			</div><!-- /.masthead -->
 
 			<h2>Fabric information</h2>
 			
@@ -7714,14 +7714,45 @@ Jan 22 18:28:33 hpss20 kernel: ACPI Exception: AE_NOT_EXIST, Evaluating _PMC (20
 
 		<div class="footer">
 			<p>&copy; Mellanox Technologies 2013</p>
-			
+
 			<ul class="footer-links">
-				<li><a href="#">About</a></li>
+				<li><a href="#myModal" data-toggle="modal">About</a></li>
 				<li class="muted">&middot;</li>
 				<li><a href="#">Contact</a></li>
 				<li class="muted">&middot;</li>
 				<li><a href="http://support.mellanox.com/SupportWeb">Support Web</a></li>
 			</ul>
+
+			<div class="bs-docs-social">
+				<div class="container">
+					<ul class="bs-docs-social-buttons">
+						<li>
+							<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mellanoxsupport&repo=sysinfo-snapshot&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+						</li>
+						<li>
+							<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mellanoxsupport&repo=sysinfo-snapshot&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		<!-- Modal -->
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<h3 id="myModalLabel">About SysInfoSnapshot</h3>
+			</div>
+			<div class="modal-body">
+				<p>Version: 2.01.1</p>
+				<p>Credits:</p>
+				<p>Python Coding: Luis De Siqueira</p>
+				<p>HTML Interface: Ryan Heath</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
 		</div>
     </div> <!-- /container -->
    
