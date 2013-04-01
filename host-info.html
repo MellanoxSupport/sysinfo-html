@@ -78,10 +78,10 @@
 						<ul class="dropdown-menu">
 							<li><a href="#systemInfo" data-toggle="tab">General</a></li>
 							<li><a href="#etc" data-toggle="tab">/etc</a></li>
-							<li><a href="#procl" data-toggle="tab">/proc</a></li>
+							<li><a href="#proc" data-toggle="tab">/proc</a></li>
 							<li><a href="#sys" data-toggle="tab">/sys</a></li>
 							<li class="divider"></li>
-							<li><a href="allDeets">All Details</a></li>
+							<li><a href="#systemInfoAll" data-toggle="tab">All Details</a></li>
 						</ul>
 					</li>
 					<li><a href="#networkInfo" data-toggle="tab">Network</a></li>
@@ -117,9 +117,9 @@
 
 <!-- start of system info tab -->
 					<div class="tab-pane fade" id="systemInfo">
-						<!--these colums must add to 10 but 9 makes a nice layout-->
-						<div class="row-fluid" style="height: 350px;">
-							<div class="span3 offset2">							
+						<div class="row-fluid">
+							<h3>General</h3>
+							<div class="span3 offset1">							
 								<a class="btn btn-small btn-success btn-block" href="#sec1002">chkconfig --list | sort</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1003">date</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1003">uptime</a>
@@ -130,22 +130,25 @@
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">free</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">fw-ini-dump</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">hostname</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1011">perfquery</a>
+
+							</div>
+
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">perfquery</a>								
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">ps xfalw</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1011">rpm -qva --qf '%{NAME}-%{VERSION}-%{RELEASE}.%{ARCH} %{SIZE}\n' | sort</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">rpm -qva --qf</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">sg_map -i -x</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">ulimit -a</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1011">uname -a</a>
-							</div>
-
-							<div class="span3 offset2">
 								<a class="btn btn-small btn-success btn-block" href="#sec1017">ibstat</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">ibstatus</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">ibv_devinfo</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">ibv_devinfo -v</a>
+							</div>
+							
+							<div class="span3">
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">lslk</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1056">lsmod</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1056">lsof</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">lsmod</a>								
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">lspci -tv</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">lspci -vvvxxx</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">lspci</a>
@@ -158,138 +161,327 @@
 						</div>
 					</div>
 
-<!-- start of /etc tab -->				
+<!-- start of /etc sub-tab item -->				
 					<div class="tab-pane fade" id="etc">
-						<!--these colums must add to 10 but 9 makes a nice layout-->	
 						<div class="row-fluid">
-							<div class="span3 offset2">
-								<a class="btn btn-small btn-success btn-block" href="#sec3004">/etc/issue</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1005">/etc/SuSE-release</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1006">/etc/redhat-release</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3001">/etc/hosts</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3003">/etc/hosts.deny</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3002">/etc/hosts.allow</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3002">/etc/udev/rules.d</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3023">/etc/sysconfig/network-scripts/ifcfg-eth3</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3024">/etc/sysconfig/network-scripts/ifcfg-eth4</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3025">/etc/sysconfig/network-scripts/ifcfg-eth4:1</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3026">/etc/sysconfig/network-scripts/ifcfg-ib0</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3027">/etc/sysconfig/network-scripts/ifcfg-lo</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3028">/etc/sysconfig/network-scripts/ifcfg-usb0</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3005">/etc/modprobe.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3007">/etc/modprobe.d/blacklist-visor.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3006">/etc/modprobe.d/anaconda.conf</a>
+							<h3>/etc/</h3>
+							<div class="span3 offset1">
+								<a class="btn btn-small btn-success btn-block" href="#sec3004">issue</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1005">SuSE-release</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1006">redhat-release</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3001">hosts</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3003">hosts.deny</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3002">hosts.allow</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3002">udev/rules.d</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3023">sysconfig/network-scripts/ifcfg-eth3</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3024">sysconfig/network-scripts/ifcfg-eth4</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3025">sysconfig/network-scripts/ifcfg-eth4:1</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3026">sysconfig/network-scripts/ifcfg-ib0</a>
 							</div>
 					
-							<div class="span3 offset2">
-								<a class="btn btn-small btn-success btn-block" href="#sec3008">/etc/modprobe.d/blacklist.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3009">/etc/modprobe.d/dist-alsa.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3010">/etc/modprobe.d/dist-oss.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3011">/etc/modprobe.d/dist.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3012">/etc/modprobe.d/gbe.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3013">/etc/modprobe.d/ib_ipoib.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3014">/etc/modprobe.d/ib_sdp.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3015">/etc/modprobe.d/mlx4_en.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3016">/etc/modprobe.d/openfwwf.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3017">/etc/resolv.conf</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3018">/etc/sysconfig/network-scripts/ifcfg-eth0</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3019">/etc/sysconfig/network-scripts/ifcfg-eth0:1</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3020">/etc/sysconfig/network-scripts/ifcfg-eth0:2</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3021">/etc/sysconfig/network-scripts/ifcfg-eth2</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3022">/etc/sysconfig/network-scripts/ifcfg-eth2:1</a>
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3027">sysconfig/network-scripts/ifcfg-lo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3028">sysconfig/network-scripts/ifcfg-usb0</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3005">modprobe.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3007">modprobe.d/blacklist-visor.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3006">modprobe.d/anaconda.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3008">modprobe.d/blacklist.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3009">modprobe.d/dist-alsa.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3010">modprobe.d/dist-oss.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3011">modprobe.d/dist.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3012">modprobe.d/gbe.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3013">modprobe.d/ib_ipoib.conf</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3014">modprobe.d/ib_sdp.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3015">modprobe.d/mlx4_en.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3016">modprobe.d/openfwwf.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3017">resolv.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3018">sysconfig/network-scripts/ifcfg-eth0</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3019">sysconfig/network-scripts/ifcfg-eth0:1</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3020">sysconfig/network-scripts/ifcfg-eth0:2</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3021">sysconfig/network-scripts/ifcfg-eth2</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3022">sysconfig/network-scripts/ifcfg-eth2:1</a>
 							</div>
 						</div>
 					</div>
 				
-<!-- start of /proc tab -->
+<!-- start of /proc sub-tab item  -->
 					<div class="tab-pane fade" id="proc">
-						<!--these colums must add to 10 but 9 makes a nice layout-->
 						<div class="row-fluid">
-							<div class="span3 offset2">
-								<a class="btn btn-small btn-success btn-block" href="#sec3045">/proc/acpi/processor/CPU*/*</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3045">/proc/misc</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3046">/proc/modules</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3047">/proc/mounts</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3048">/proc/mtrr</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3049">/proc/net/dev_mcast</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3050">/proc/net/sdp</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3029">/proc/buddyinfo</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3051">/proc/partitions</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3030">/proc/cmdline</a>
-								<a class="btn btn-small btn-danger  btn-block" href="#sec3052">/proc/scsi/scsi</a>
-								<a class="btn btn-small btn-warning btn-block" href="#sec3031">/proc/cpuinfo</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3053">/proc/slabinfo</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3032">/proc/crypto</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3054">/proc/stat</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3033">/proc/devices</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3055">/proc/swaps</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3034">/proc/diskstats</a>
+							<h3>/proc/</h3>
+							<div class="span3 offset1">
+								<a class="btn btn-small btn-success btn-block" href="#sec3045">acpi/processor/CPU*/*</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3045">misc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3046">modules</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3047">mounts</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3048">mtrr</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3049">net/dev_mcast</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3050">net/sdp</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3029">buddyinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3051">partitions</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3030">cmdline</a>
+								<a class="btn btn-small btn-danger  btn-block" href="#sec3052">scsi/scsi</a>
+								<a class="btn btn-small btn-warning btn-block" href="#sec3031">cpuinfo</a>
 							</div>
 							
-							<div class="span3 offset2">	
-								<a class="btn btn-small btn-success btn-block" href="#sec3056">/proc/uptime</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3035">/proc/dma</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3057">/proc/version</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3036">/proc/execdomains</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3058">/proc/vmstat</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3037">/proc/filesystems</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3059">/proc/zoneinfo</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3038">/proc/interrupts</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3039">/proc/iomem</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3040">/proc/ioports</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3041">/proc/loadavg</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3042">/proc/locks</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3043">/proc/mdstat</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3044">/proc/meminfo</a>
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3053">slabinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3032">crypto</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3054">stat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3033">devices</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3055">swaps</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3034">diskstats</a>	
+								<a class="btn btn-small btn-success btn-block" href="#sec3056">uptime</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3035">dma</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3057">version</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3036">execdomains</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3058">vmstat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3037">filesystems</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3059">zoneinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3038">interrupts</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3039">iomem</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3040">ioports</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3041">loadavg</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3042">locks</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3043">mdstat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3044">meminfo</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1056">zcat /proc/config.gz</a>
 								<a class="btn btn-small btn-success btn-block" href="#sec1057">zz_proc_net_bonding_files</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec1057">zz_sys_class_net_files</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1057">zz_sys_class_net_files</a>	
 							</div>
 						</div>
 					</div>
 					
-<!-- start of /sys tab -->					
+<!-- start of /sys sub-tab item -->					
 					<div class="tab-pane fade" id="sys">
-						<!--these colums must add to 10 but 9 makes a nice layout-->
 						<div class="row-fluid">
-							<div class="span3 offset2">
-								<a class="btn btn-small btn-success btn-block" href="#sec3060">/sys/class/infiniband/cxgb3_0/board_id</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3061">/sys/class/infiniband/cxgb3_0/fw_ver</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3062">/sys/class/infiniband/cxgb3_0/hca_type</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3063">/sys/class/infiniband/cxgb3_0/hw_rev</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3064">/sys/class/infiniband/cxgb3_0/node_desc</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3065">/sys/class/infiniband/cxgb3_0/node_guid</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3066">/sys/class/infiniband/cxgb3_0/node_type</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3067">/sys/class/infiniband/cxgb3_0/sys_image_guid</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3068">/sys/class/infiniband/cxgb3_0/uevent</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3069">/sys/class/infiniband/mlx4_0/board_id</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3070">/sys/class/infiniband/mlx4_0/fw_ver</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3071">/sys/class/infiniband/mlx4_0/hca_type</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3072">/sys/class/infiniband/mlx4_0/hw_rev</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3073">/sys/class/infiniband/mlx4_0/node_desc</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3074">/sys/class/infiniband/mlx4_0/node_guid</a>
+							<h3>/sys/class/infiniband/</h3>
+							<div class="span3 offset1">
+								<a class="btn btn-small btn-success btn-block" href="#sec3060">cxgb3_0/board_id</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3061">cxgb3_0/fw_ver</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3062">cxgb3_0/hca_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3063">cxgb3_0/hw_rev</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3064">cxgb3_0/node_desc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3065">cxgb3_0/node_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3066">cxgb3_0/node_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3067">cxgb3_0/sys_image_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3068">cxgb3_0/uevent</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3069">mlx4_0/board_id</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3070">mlx4_0/fw_ver</a>
 							</div>
 							
-							<div class="span3 offset2">	
-								<a class="btn btn-small btn-success btn-block" href="#sec3075">/sys/class/infiniband/mlx4_0/node_type</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3076">/sys/class/infiniband/mlx4_0/sys_image_guid</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3077">/sys/class/infiniband/mlx4_0/uevent</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3078">/sys/class/infiniband/mlx4_1/board_id</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3079">/sys/class/infiniband/mlx4_1/fw_ver</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3080">/sys/class/infiniband/mlx4_1/hca_type</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3081">/sys/class/infiniband/mlx4_1/hw_rev</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3082">/sys/class/infiniband/mlx4_1/node_desc</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3083">/sys/class/infiniband/mlx4_1/node_guid</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3084">/sys/class/infiniband/mlx4_1/node_type</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3085">/sys/class/infiniband/mlx4_1/sys_image_guid</a>
-								<a class="btn btn-small btn-success btn-block" href="#sec3086">/sys/class/infiniband/mlx4_1/uevent</a>
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3071">mlx4_0/hca_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3072">mlx4_0/hw_rev</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3073">mlx4_0/node_desc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3074">mlx4_0/node_guid</a>	
+								<a class="btn btn-small btn-success btn-block" href="#sec3075">mlx4_0/node_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3076">mlx4_0/sys_image_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3077">mlx4_0/uevent</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3078">mlx4_1/board_id</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3079">mlx4_1/fw_ver</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3080">mlx4_1/hca_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3081">mlx4_1/hw_rev</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3082">mlx4_1/node_desc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3083">mlx4_1/node_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3084">mlx4_1/node_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3085">mlx4_1/sys_image_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3086">mlx4_1/uevent</a>
 							</div>
 						</div>						
 					</div>
+					
+<!-- all -->
+<!-- start of system all-info sub-tab item -->
+					<div class="tab-pane fade" id="systemInfoAll">
+						<div class="row-fluid">
+							<h3>General</h3>
+							<div class="span3 offset1">							
+								<a class="btn btn-small btn-success btn-block" href="#sec1002">chkconfig --list | sort</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1003">date</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1003">uptime</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">df -h</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">dmesg</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">sysctl -a</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">fdisk -l</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">free</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">fw-ini-dump</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">hostname</a>
+
+							</div>
+
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">perfquery</a>								
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">ps xfalw</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">rpm -qva --qf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">sg_map -i -x</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">ulimit -a</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1011">uname -a</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1017">ibstat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">ibstatus</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">ibv_devinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">ibv_devinfo -v</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">lslk</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">lsmod</a>								
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">lspci -tv</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">lspci -vvvxxx</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">lspci</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">modprobe sg</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">mount</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">ofed_info</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">ompi_info</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">/var/log/messages</a>
+							</div>
+						</div>
+
+<!-- start of system all-info /etc sub-tab item -->				
+						<div class="row-fluid">
+							<h3>/etc/</h3>
+							<div class="span3 offset1">
+								<a class="btn btn-small btn-success btn-block" href="#sec3004">issue</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1005">SuSE-release</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1006">redhat-release</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3001">hosts</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3003">hosts.deny</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3002">hosts.allow</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3002">udev/rules.d</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3023">sysconfig/network-scripts/ifcfg-eth3</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3024">sysconfig/network-scripts/ifcfg-eth4</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3025">sysconfig/network-scripts/ifcfg-eth4:1</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3026">sysconfig/network-scripts/ifcfg-ib0</a>
+							</div>
+					
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3027">sysconfig/network-scripts/ifcfg-lo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3028">sysconfig/network-scripts/ifcfg-usb0</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3005">modprobe.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3007">modprobe.d/blacklist-visor.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3006">modprobe.d/anaconda.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3008">modprobe.d/blacklist.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3009">modprobe.d/dist-alsa.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3010">modprobe.d/dist-oss.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3011">modprobe.d/dist.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3012">modprobe.d/gbe.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3013">modprobe.d/ib_ipoib.conf</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3014">modprobe.d/ib_sdp.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3015">modprobe.d/mlx4_en.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3016">modprobe.d/openfwwf.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3017">resolv.conf</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3018">sysconfig/network-scripts/ifcfg-eth0</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3019">sysconfig/network-scripts/ifcfg-eth0:1</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3020">sysconfig/network-scripts/ifcfg-eth0:2</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3021">sysconfig/network-scripts/ifcfg-eth2</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3022">sysconfig/network-scripts/ifcfg-eth2:1</a>
+							</div>
+						</div>
+			
+<!-- start of system all-info /proc sub-tab item -->
+						<div class="row-fluid">
+							<h3>/proc/</h3>
+							<div class="span3 offset1">
+								<a class="btn btn-small btn-success btn-block" href="#sec3045">acpi/processor/CPU*/*</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3045">misc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3046">modules</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3047">mounts</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3048">mtrr</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3049">net/dev_mcast</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3050">net/sdp</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3029">buddyinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3051">partitions</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3030">cmdline</a>
+								<a class="btn btn-small btn-danger  btn-block" href="#sec3052">scsi/scsi</a>
+								<a class="btn btn-small btn-warning btn-block" href="#sec3031">cpuinfo</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3053">slabinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3032">crypto</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3054">stat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3033">devices</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3055">swaps</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3034">diskstats</a>	
+								<a class="btn btn-small btn-success btn-block" href="#sec3056">uptime</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3035">dma</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3057">version</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3036">execdomains</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3058">vmstat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3037">filesystems</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3059">zoneinfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3038">interrupts</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3039">iomem</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3040">ioports</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3041">loadavg</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3042">locks</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3043">mdstat</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3044">meminfo</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1056">zcat /proc/config.gz</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1057">zz_proc_net_bonding_files</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec1057">zz_sys_class_net_files</a>	
+							</div>
+						</div>
+					
+<!-- start of system all-info /sys sub-tab item -->					
+						<div class="row-fluid">
+							<h3>/sys/class/infiniband/</h3>
+							<div class="span3 offset1">
+								<a class="btn btn-small btn-success btn-block" href="#sec3060">cxgb3_0/board_id</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3061">cxgb3_0/fw_ver</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3062">cxgb3_0/hca_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3063">cxgb3_0/hw_rev</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3064">cxgb3_0/node_desc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3065">cxgb3_0/node_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3066">cxgb3_0/node_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3067">cxgb3_0/sys_image_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3068">cxgb3_0/uevent</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3069">mlx4_0/board_id</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3070">mlx4_0/fw_ver</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3071">mlx4_0/hca_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3072">mlx4_0/hw_rev</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3073">mlx4_0/node_desc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3074">mlx4_0/node_guid</a>	
+								<a class="btn btn-small btn-success btn-block" href="#sec3075">mlx4_0/node_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3076">mlx4_0/sys_image_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3077">mlx4_0/uevent</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3078">mlx4_1/board_id</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3079">mlx4_1/fw_ver</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3080">mlx4_1/hca_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3081">mlx4_1/hw_rev</a>
+							</div>
+							
+							<div class="span3">
+								<a class="btn btn-small btn-success btn-block" href="#sec3082">mlx4_1/node_desc</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3083">mlx4_1/node_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3084">mlx4_1/node_type</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3085">mlx4_1/sys_image_guid</a>
+								<a class="btn btn-small btn-success btn-block" href="#sec3086">mlx4_1/uevent</a>
+							</div>
+						</div>						
+					</div>
+<!-- /all -->
 										
-<!-- start of netork info tab -->					
+<!-- start of netork info tab -->
 					<div class="tab-pane fade" id="networkInfo">
-						<!--these colums must add to 10 but 9 makes a nice layout-->
+						
 						<div class="row-fluid" style="height: 350px;">
 							<div class="span3 offset2">			
 								<a class="btn btn-small btn-success btn-block" href="#sec1001">arp -an</a>
